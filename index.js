@@ -110,3 +110,6 @@ $(document).ready(function () {
     applyFilter(filterValue);
   });
 });
+$(".share-btn").click(function () {
+  window.open("https://google.com", "_blank");
+});
