@@ -111,5 +111,5 @@ $(document).ready(function () {
   });
 });
 $(".share-btn").click(function () {
-  window.open("https://google.com", "_blank");
+  window.open("https://forms.gle/g3SzG9qGXagAVkqG6", "_blank");
 });
