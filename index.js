@@ -47,50 +47,47 @@ $(document).ready(function () {
 
       // 3. Create Card HTML
       const cardHtml = `
-        <div class="subject-card ${subject.code}" role="button" tabindex="0">
-            <div class="card-header">
-                <h2>${subject.name}</h2>
-                <div class="badges">
-                    ${subject.year && subject.sem
-          ? `<span class="badge badge-year">${subject.year}.${subject.sem}</span>`
-          : ""
-        }
-                    ${subject.credits
-          ? `<span class="badge badge-credits">${subject.credits} Credits</span>`
-          : ""
-        }
-                </div>
-            </div>
-            
-            <div class="tags-container">
-                ${tagsHtml}
-            </div>
-
-            <p class="card-info">${infoText}.</p>
-
-            <div class="card-footer">
-                <button class="open-btn" aria-label="Open Resources">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z"/>
-                    </svg>
-                </button>
-            </div>
+<div class="subject-card" data-code="${subject.code}" role="button" tabindex="0">
+    <div class="card-header">
+        <h2>${subject.name}</h2>
+        <div class="badges">
+            ${subject.year && subject.sem
+              ? `<span class="badge badge-year">${subject.year}.${subject.sem}</span>`
+              : ""
+            }
+            ${subject.credits
+              ? `<span class="badge badge-credits">${subject.credits} Credits</span>`
+              : ""
+            }
         </div>
-      `;
+    </div>
 
+    <div class="tags-container">
+        ${tagsHtml}
+    </div>
+
+    <p class="card-info">${infoText}.</p>
+
+    <div class="card-footer">
+        <button class="open-btn" aria-label="Open Resources">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z"/>
+            </svg>
+        </button>
+    </div>
+</div>
+`;
       $grid.append(cardHtml);
     });
 
     // Handle Card Click (Delegated event)
-    $(".subject-card").off("click").on("click", function () {
-      const classes = $(this).attr("class").split(/\s+/);
-      const code = classes.find(c => c !== "subject-card");
+   $(".subject-card").off("click").on("click", function () {
+  const code = $(this).data("code");
 
-      if (code) {
-        const redirectURL = `./public/index.html?code=${code}`;
-        window.open(redirectURL, "_self");
-      }
-    });
+  if (code) {
+    window.location.href = `./public/index.html?code=${code}`;
+  }
+});
   }
 
   // Fetch JSON
