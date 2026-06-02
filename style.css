@@ -48,38 +48,42 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 .logo-container img {
-  width: 80px;
-  height: 80px;
+  width: 95px;
+  height: 95px;
   object-fit: contain;
-  border-radius: 0;
-  filter: drop-shadow(0 0 12px rgba(138, 209, 12, 0.45));
-  transition: 0.3s ease;
+
+  /* remove this after getting transparent PNG */
+  border-radius: 50%;
+
+  filter:
+    drop-shadow(0 0 12px rgba(138, 209, 12, 0.35))
+    drop-shadow(0 0 25px rgba(138, 209, 12, 0.15));
+
+  transition: all 0.3s ease;
 }
 
 .logo-container img:hover {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 18px rgba(164, 242, 22, 0.5));
+  transform: scale(1.06);
 }
 
 .logo-text h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 1;
-  color: var(--text-primary);
-  text-shadow: 0 0 10px rgba(138,209,12,0.15);
 }
 
 .logo-text p {
-  margin: 4px 0 0;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 1px;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: #cfcfcf;
+}
 }
 .accent-text {
   color: var(--accent-lime);
