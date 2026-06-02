@@ -48,20 +48,37 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
 }
 
 .logo-container img {
-  height: 45px;
-  filter: drop-shadow(0 0 5px rgba(138, 209, 12, 0.5));
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 12px rgba(138, 209, 12, 0.45));
+  transition: 0.3s ease;
 }
 
-.logo-container h1 {
-  font-size: 1.2rem;
+.logo-container img:hover {
+  transform: scale(1.05);
+}
+
+.logo-text h1 {
   margin: 0;
+  font-size: 1.8rem;
   font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--text-primary);
 }
 
+.logo-text p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
 .accent-text {
   color: var(--accent-lime);
 }
@@ -291,15 +308,24 @@ footer a {
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
-  .logo-container h1 {
-    font-size: 1rem;
+
+  .logo-container img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .logo-text p {
+    font-size: 0.72rem;
   }
 
   .subjects-grid {
     grid-template-columns: 1fr;
   }
 
-  /* 1 column on mobile */
   .filter-pill {
     padding: 8px 18px;
     font-size: 0.85rem;
