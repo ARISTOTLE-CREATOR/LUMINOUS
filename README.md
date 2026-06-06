@@ -9,9 +9,6 @@ LUMINOUS provides organized semester-wise notes, resources, and academic materia
 GitHub Pages:
 https://aristotle-creator.github.io/LUMINOUS/
 
-Netlify:
-https://luminous-hub.netlify.app/
-
 ---
 
 ## ✨ Features
