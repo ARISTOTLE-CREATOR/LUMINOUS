@@ -13,7 +13,7 @@ https://aristotle-creator.github.io/LUMINOUS/
 
 ## ✨ Features
 
-- 📚 Semester-wise subject organization
+- 📚 Semester-wise  subject organization
 - 🔍 Quick filtering by semester
 - 📱 Fully responsive design
 - ⚡ Fast loading static website
